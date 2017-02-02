@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<iostream>
+
+int rand_int(int a,int b)
+{
+    //The basic function here is like (rand() % range)+ Lower_bound
+
+    srand(time(0));
+    if (a > b)
+        return((rand() % (a-b+1)) + b);
+    else if (b > a)
+        return((rand() % (b-a+1)) + a);
+    else
+        return a;
+}
+
+int main()
+{
+    int a,b,a1,a2,a3,a4,a5,a6,a7;
+	a=27000;
+	b=30000;
+   
+    a1=rand_int(a,b);
+	a2=a1%10000;
+	a2=a2+2;
+	std::cout<<"enter a 4 digit value";
+	std::cin>>a3;
+	a4=9999-a3;
+	std::cout<<"enter another 4 digit no.";
+	std::cin>>a5;
+	a6=9999-a5;
+	a7=a2+a3+a4+a5+a6;
+	std::cout<<"the sum is:"<<a7;
+	std::cout<<"the random no. is"<<a1;
+}
+	
